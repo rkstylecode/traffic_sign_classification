@@ -1,30 +1,23 @@
 # 🚦 Traffic Sign Classification
 
-This repository contains a Deep Learning project that classifies images of traffic signs into 43 distinct categories. It was trained on the German Traffic Sign Recognition Benchmark (GTSRB) dataset. 
+This is a Deep Learning project I built to classify images of traffic signs into 43 distinct categories using a Convolutional Neural Network (CNN).
 
-The project includes both the data exploration/training notebooks, a local desktop interface, and a modern web application for testing the model.
-
-## 🎥 Demo
-
-*(Insert your video recording or GIF of the working Streamlit website here!)*
-
-> **Tip:** You can literally drag and drop a `.mp4` video file or a `.gif` file right here into the GitHub text editor to upload your video!
+The model was trained on the German Traffic Sign Recognition Benchmark (GTSRB) dataset and is integrated into a web application for easy testing and predictions.
 
 ## 🚀 Project Structure
 
-- **`traffic_signs.ipynb`**: The research notebook containing the data loading, preprocessing, and Convolutional Neural Network (CNN) training process.
-- **`app.py`**: A clean, interactive web application built with Streamlit.
-- **`gui.ipynb`**: A local desktop application built with Tkinter.
+- **`traffic_signs.ipynb`**: My research notebook containing the data loading, preprocessing, and model training code.
+- **`app.py`**: The interactive web application built with Streamlit.
 - **`traffic_classifier.h5`**: The trained Keras neural network model weights.
 
 ## 💻 How to Run Locally
 
-If you want to run the web application on your own computer, follow these steps:
+To run the web application on your own computer, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/traffic-sign-classification.git
-   cd traffic-sign-classification
+   git clone https://github.com/rkstylecode/traffic_sign_classification.git
+   cd traffic_sign_classification
    ```
 
 2. **Install the requirements:**
@@ -42,4 +35,4 @@ If you want to run the web application on your own computer, follow these steps:
 ## 🧠 Technologies Used
 * **Deep Learning:** TensorFlow, Keras
 * **Computer Vision:** PIL (Pillow), NumPy
-* **Frontend UI:** Streamlit, Tkinter
+* **Frontend UI:** Streamlit
