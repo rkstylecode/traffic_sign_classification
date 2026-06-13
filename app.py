@@ -1,9 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-from keras.models import load_model
 import os
-
 st.set_page_config(page_title="Traffic Sign Classifier", page_icon="🚦")
 
 st.title("🚦 Traffic Sign Classification")
@@ -11,15 +9,13 @@ st.write("Upload an image of a traffic sign to see what it means.")
 
 @st.cache_resource
 def load_keras_model():
+    from keras.models import load_model
     model_path = 'traffic_classifier.h5'
     if os.path.exists(model_path):
         return load_model(model_path, compile=False)
     return None
 
-model = load_keras_model()
 
-if model is None:
-    st.error("Model not found. Please ensure `traffic_classifier.h5` is in the same directory.")
 
 classes = { 1:'Speed limit (20km/h)',
             2:'Speed limit (30km/h)', 
@@ -67,17 +63,23 @@ classes = { 1:'Speed limit (20km/h)',
 
 uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png", "jpeg", "webp"])
 
-if uploaded_file is not None and model is not None:
-    image = Image.open(uploaded_file)
-    st.image(image, caption='Uploaded Image', width=300)
-    
-    # Resize and preprocess the image just like in the Tkinter app
-    img = image.resize((30,30))
-    img = np.expand_dims(img, axis=0)
-    img = np.array(img)
-    
-    # Predict
-    pred = np.argmax(model.predict(img), axis=-1)[0]
-    sign_name = classes[pred + 1]
-    
-    st.success(f"**Sign:** {sign_name}")
+if uploaded_file is not None:
+    with st.spinner('Loading model...'):
+        model = load_keras_model()
+        
+    if model is None:
+        st.error("Model not found. Please ensure `traffic_classifier.h5` is in the same directory.")
+    else:
+        image = Image.open(uploaded_file)
+        st.image(image, caption='Uploaded Image', width=300)
+        
+        # Resize and preprocess the image just like in the Tkinter app
+        img = image.resize((30,30))
+        img = np.expand_dims(img, axis=0)
+        img = np.array(img)
+        
+        # Predict
+        pred = np.argmax(model.predict(img), axis=-1)[0]
+        sign_name = classes[pred + 1]
+        
+        st.success(f"**Sign:** {sign_name}")
