@@ -4,7 +4,7 @@
 
 ## 🎥 Demo
 
-https://github.com/user-attachments/assets/streamlit-app-demo.webm
+https://github.com/user-attachments/assets/c983cba0-0033-40f7-8993-234d1e8e5fc8
 
 This is a Deep Learning project I built to classify images of traffic signs into 43 distinct categories using a Convolutional Neural Network (CNN).
 
