@@ -1,8 +1,14 @@
 # 🚦 Traffic Sign Classification
 
+**[🔴 Try the Live Web App Here!](https://trafficsignclassification-27.streamlit.app/)**
+
+## 🎥 Demo
+
+https://github.com/user-attachments/assets/streamlit-app-demo.webm
+
 This is a Deep Learning project I built to classify images of traffic signs into 43 distinct categories using a Convolutional Neural Network (CNN).
 
-The model was trained on the German Traffic Sign Recognition Benchmark (GTSRB) dataset and is integrated into a web application for easy testing and predictions.
+The model was trained on the German Traffic Sign Recognition Benchmark (GTSRB) [Dataset](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign) and is integrated into a web application for easy testing and predictions.
 
 ## 🚀 Project Structure
 
